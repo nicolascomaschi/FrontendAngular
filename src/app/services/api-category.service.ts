@@ -14,7 +14,7 @@ export class ApiCategoryService {
 
   }
 
-  getCategories(): Observable<Category>{
-    return  this._http.get<Category>(this.url);
+  getCategories(): Observable<Category[]>{
+    return  this._http.get<Category[]>(this.url);
   }
 }
