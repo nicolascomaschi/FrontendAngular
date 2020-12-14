@@ -1,5 +1,5 @@
 export interface Brand {
-    isSuccess: boolean;
-    message: string;
-    result: any;
+    name: string;
+    user: number;
+    id: number;
 }

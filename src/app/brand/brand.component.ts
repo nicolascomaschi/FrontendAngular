@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiBrandService } from '../services/api-brand.service';
+import { Response } from '../models/response';
 
 @Component({
   selector: 'app-brand',
@@ -10,15 +11,19 @@ export class BrandComponent implements OnInit {
 
   public list: any[];
   public gridcolumns: string[] = ['id','name'];
-  constructor(private apiBrnads: ApiBrandService ) { }
+  constructor( private apiBrands: ApiBrandService ) { }
 
   ngOnInit(): void {
     this.getBrands();
   }
 
   getBrands(){
-    this.apiBrnads.getBrands().subscribe(response => {
+    this.apiBrands.getBrands().subscribe(response => {
       this.list = response.result;
     });
+  }
+
+  openModal(){
+    console.log('OK');
   }
 }
